@@ -182,7 +182,7 @@ $body$;
 
 CREATE OR REPLACE FUNCTION audit.audit_table(target_table regclass, audit_rows boolean, audit_query_text boolean, ignored_cols text[]) RETURNS void AS $body$
 DECLARE
-  stm_targets text = 'INSERT OR UPDATE OR DELETE OR TRUNCATE';
+  stm_targets text = 'UPDATE OR DELETE OR TRUNCATE';
   _q_txt text;
   _ignored_cols_snip text = '';
 BEGIN
